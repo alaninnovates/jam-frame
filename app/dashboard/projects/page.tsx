@@ -8,28 +8,32 @@ const projects = [
         title: 'String Quartet - Mozart',
         date: new Date(),
         duration: 100,
-        thumbnail: '/placeholder.svg?height=720&width=1280',
+        thumbnail:
+            'https://allaboutmozart.com/wp-content/uploads/2021/04/MozartHaydnPlaying-770x510.jpg',
     },
     {
         id: 2,
         title: 'Jazz Ensemble - Duke Ellington',
         date: new Date(),
         duration: 120,
-        thumbnail: '/placeholder.svg?height=720&width=1280',
+        thumbnail:
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Duke_Ellington_Big_Band.jpg/1200px-Duke_Ellington_Big_Band.jpg',
     },
     {
         id: 3,
         title: 'Rock Band - The Beatles',
         date: new Date(),
         duration: 150,
-        thumbnail: '/placeholder.svg?height=720&width=1280',
+        thumbnail:
+            'https://preview.redd.it/whats-your-opinion-on-the-beatles-rock-band-v0-9n10d3c36cgd1.jpeg?auto=webp&s=07704efc6f39ab11434c51a782f8b1450037a690',
     },
     {
         id: 4,
         title: 'Electronic Duo - Daft Punk',
         date: new Date(),
         duration: 180,
-        thumbnail: '/placeholder.svg?height=720&width=1280',
+        thumbnail:
+            'https://i.guim.co.uk/img/media/8f907d9d21a799efa5bac251d6c5e0457121e398/0_373_2096_1257/master/2096.jpg?width=465&dpr=1&s=none&crop=none',
     },
 ];
 
@@ -41,7 +45,7 @@ const humanizeDuration = (duration: number) => {
 
 export default async function ProjectsPage() {
     return (
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col h-full">
             <div className="flex-1 p-6 md:p-10">
                 <h1 className="text-2xl font-bold mb-6">Projects</h1>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -89,7 +93,7 @@ export default async function ProjectsPage() {
                         </div>
                     ))}
                     <Link
-                        href="/studio/create"
+                        href="/dashboard/studio/create"
                         className="border rounded-lg flex flex-col items-center justify-center p-8 h-full min-h-[250px] hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
                     >
                         <div className="w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4">
