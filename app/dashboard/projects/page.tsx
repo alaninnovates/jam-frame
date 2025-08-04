@@ -52,7 +52,7 @@ export default async function ProjectsPage() {
                     {projects.map((project) => (
                         <div
                             key={project.id}
-                            className="bg-white rounded-lg shadow-md p-4"
+                            className="bg-card rounded-lg shadow-md p-4"
                         >
                             <div className="aspect-video relative">
                                 <img
@@ -62,12 +62,12 @@ export default async function ProjectsPage() {
                                     alt={project.title}
                                     className="w-full h-full object-cover"
                                 />
-                                <div className="absolute bottom-2 right-2 bg-black/70 text-white px-2 py-1 rounded text-xs flex items-center gap-1">
+                                <div className="absolute bottom-2 right-2 bg-background/80 text-foreground px-2 py-1 rounded text-xs flex items-center gap-1 backdrop-blur-sm">
                                     <Clock className="w-3 h-3" />
                                     {humanizeDuration(project.duration)}
                                 </div>
                             </div>
-                            <div className="flex items-start justify-between">
+                            <div className="flex items-start justify-between mt-4">
                                 <h2 className="font-medium">{project.title}</h2>
                                 <Button
                                     variant="ghost"
@@ -94,10 +94,10 @@ export default async function ProjectsPage() {
                     ))}
                     <Link
                         href="/dashboard/studio/create"
-                        className="border rounded-lg flex flex-col items-center justify-center p-8 h-full min-h-[250px] hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
+                        className="border rounded-lg flex flex-col items-center justify-center p-8 h-full min-h-[250px] hover:bg-muted transition-colors"
                     >
-                        <div className="w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4">
-                            <Plus className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                        <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                            <Plus className="w-8 h-8 text-primary" />
                         </div>
                         <h3 className="font-medium">Create New Project</h3>
                     </Link>

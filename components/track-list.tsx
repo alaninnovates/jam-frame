@@ -45,7 +45,7 @@ export function TrackList({
 
     if (tracks.length === 0) {
         return (
-            <div className="text-center py-8 text-gray-500">
+            <div className="text-center py-8 text-muted-foreground">
                 <Music className="w-12 h-12 mx-auto mb-2 opacity-50" />
                 <p>No tracks recorded yet</p>
                 <p className="text-sm">Start recording to add tracks</p>
@@ -62,7 +62,7 @@ export function TrackList({
                         key={track.id}
                         className={`flex items-center gap-2 p-2 rounded-md border ${
                             activeTrack === index
-                                ? 'bg-purple-50 border-purple-200 dark:bg-purple-900/20 dark:border-purple-800'
+                                ? 'bg-primary/10 border-primary/20 dark:bg-primary/20 dark:border-primary/30'
                                 : ''
                         }`}
                     >
@@ -114,7 +114,7 @@ export function TrackList({
                                 <Button
                                     size="icon"
                                     variant="ghost"
-                                    className="h-7 w-7 text-red-500"
+                                    className="h-7 w-7 text-destructive"
                                     onClick={() => onDeleteTrack(track.id)}
                                 >
                                     <Trash2 className="w-3 h-3" />

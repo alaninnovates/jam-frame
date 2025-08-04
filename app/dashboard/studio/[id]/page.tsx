@@ -112,7 +112,7 @@ export default function StudioPage() {
         <div className="flex flex-col min-h-screen">
             <main className="flex-1 container px-4 py-6 md:px-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div className="lg:col-span-2 space-y-6">
-                    <div className="relative aspect-video bg-black rounded-lg overflow-hidden">
+                    <div className="relative aspect-video bg-background rounded-lg overflow-hidden border">
                         {tracks.length === 0 ? (
                             <video
                                 ref={videoRef}
@@ -130,7 +130,7 @@ export default function StudioPage() {
                                         key={track.id}
                                         className={`relative ${
                                             activeTrack === index
-                                                ? 'ring-2 ring-purple-500'
+                                                ? 'ring-2 ring-primary'
                                                 : ''
                                         }`}
                                         onClick={() => setActiveTrack(index)}
@@ -140,7 +140,7 @@ export default function StudioPage() {
                                             className="w-full h-full object-cover track-video"
                                             controls={false}
                                         />
-                                        <div className="absolute bottom-2 left-2 text-xs bg-black/70 text-white px-2 py-1 rounded">
+                                        <div className="absolute bottom-2 left-2 text-xs bg-background/70 text-foreground px-2 py-1 rounded">
                                             {track.name}
                                         </div>
                                     </div>
@@ -153,7 +153,7 @@ export default function StudioPage() {
                                         playsInline
                                         className="w-full h-full object-cover"
                                     />
-                                    <div className="absolute bottom-2 left-2 text-xs bg-black/70 text-white px-2 py-1 rounded">
+                                    <div className="absolute bottom-2 left-2 text-xs bg-background/70 text-foreground px-2 py-1 rounded">
                                         Live Camera
                                     </div>
                                 </div>
@@ -161,8 +161,8 @@ export default function StudioPage() {
                         )}
 
                         {isRecording && (
-                            <div className="absolute top-4 right-4 flex items-center gap-2 bg-red-500 text-white px-3 py-1 rounded-full text-sm">
-                                <span className="animate-pulse w-3 h-3 bg-white rounded-full"></span>
+                            <div className="absolute top-4 right-4 flex items-center gap-2 bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-sm">
+                                <span className="animate-pulse w-3 h-3 bg-destructive-foreground rounded-full"></span>
                                 Recording
                             </div>
                         )}
@@ -199,7 +199,7 @@ export default function StudioPage() {
                         </TabsList>
                         <TabsContent
                             value="tracks"
-                            className="p-4 border rounded-md"
+                            className="p-4 border rounded-md bg-card text-card-foreground"
                         >
                             <TrackList
                                 tracks={tracks}
@@ -227,16 +227,18 @@ export default function StudioPage() {
                         </TabsContent>
                         <TabsContent
                             value="layout"
-                            className="p-4 border rounded-md"
+                            className="p-4 border rounded-md bg-card text-card-foreground"
                         >
                             <div className="space-y-4">
                                 <h3 className="font-medium">Layout Options</h3>
-                                <p>nothin to see here :p</p>
+                                <p className="text-muted-foreground">
+                                    nothin to see here :p
+                                </p>
                             </div>
                         </TabsContent>
                         <TabsContent
                             value="audio"
-                            className="p-4 border rounded-md"
+                            className="p-4 border rounded-md bg-card text-card-foreground"
                         >
                             <div className="space-y-4">
                                 <h3 className="font-medium">Audio Mixing</h3>
@@ -245,7 +247,7 @@ export default function StudioPage() {
                                         key={track.id}
                                         className="flex items-center gap-3"
                                     >
-                                        <Volume2 className="w-4 h-4 shrink-0" />
+                                        <Volume2 className="w-4 h-4 shrink-0 text-muted-foreground" />
                                         <span className="text-sm truncate">
                                             {track.name}
                                         </span>

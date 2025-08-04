@@ -21,10 +21,7 @@ export function RecordingControls({
     return (
         <div className="flex items-center gap-2">
             {!isRecording ? (
-                <Button
-                    onClick={onStartRecording}
-                    className="bg-red-500 hover:bg-red-600"
-                >
+                <Button onClick={onStartRecording} variant="destructive">
                     <Video className="w-4 h-4 mr-2" />
                     Start Recording
                 </Button>
