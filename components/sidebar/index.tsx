@@ -15,6 +15,7 @@ import {
 import { routes } from '@/lib/routes';
 import { usePathname } from 'next/navigation';
 import { SidebarAccountInfo } from './sidebar-account-info';
+import { SidebarRecentStudios } from './sidebar-recent-studios';
 
 export const Sidebar = () => {
     const pathname = usePathname();
@@ -34,13 +35,17 @@ export const Sidebar = () => {
                                         asChild
                                         isActive={pathname === item.url}
                                     >
-                                        <a href={item.url}>{item.title}</a>
+                                        <a href={item.url}>
+                                            <item.icon />
+                                            <span>{item.title}</span>
+                                        </a>
                                     </SidebarMenuButton>
                                 </SidebarMenuItem>
                             ))}
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>
+                <SidebarRecentStudios />
             </SidebarContent>
             <SidebarFooter>
                 <SidebarAccountInfo />
