@@ -1,11 +1,21 @@
 import { Button } from '@/components/ui/button';
 import { humanizeDuration } from '@/lib/time';
 import { Project } from '@/lib/types';
+import { cn } from '@/lib/utils';
 import { Calendar, Clock, MoreVertical } from 'lucide-react';
 
-export const ProjectCard = ({ project }: { project: Project }) => {
+export const ProjectCard = ({
+    project,
+    className,
+}: {
+    project: Project;
+    className?: string;
+}) => {
     return (
-        <div key={project.id} className="bg-card rounded-lg shadow-md p-4">
+        <div
+            key={project.id}
+            className={cn('bg-card rounded-lg shadow-md p-4', className)}
+        >
             <div className="aspect-video relative">
                 <img
                     src={project.thumbnail || '/placeholder.svg'}
@@ -18,7 +28,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                 </div>
             </div>
             <div className="flex items-start justify-between mt-4">
-                <h2 className="font-medium">{project.title}</h2>
+                <h2 className="font-medium truncate">{project.title}</h2>
                 <Button variant="ghost" size="icon" className="h-8 w-8">
                     <MoreVertical className="w-4 h-4" />
                 </Button>
