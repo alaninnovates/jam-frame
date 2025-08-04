@@ -5,9 +5,9 @@ import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Volume2 } from 'lucide-react';
-import { RecordingControls } from '@/components/recording-controls';
-import { MetronomeControl } from '@/components/metronome-control';
-import { TrackList } from '@/components/track-list';
+import { RecordingControls } from '@/app/dashboard/studio/_components/recording-controls';
+import { MetronomeControl } from '@/app/dashboard/studio/_components/metronome-control';
+import { TrackList } from '@/app/dashboard/studio/_components/track-list';
 
 export default function StudioPage() {
     const [isRecording, setIsRecording] = useState(false);
